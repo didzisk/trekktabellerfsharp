@@ -82,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Skattetabell\trekk2019.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Skattetabell\trekk2020.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

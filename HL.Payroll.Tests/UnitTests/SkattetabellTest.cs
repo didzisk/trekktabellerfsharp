@@ -88,12 +88,17 @@ namespace HL.Payroll.Tests.UnitTests
         }
 
         [Test]
+        public void ShouldGenerateCorrectTaxForAllLines2020()
+        {
+	        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2020.txt", Skattetabell2020.beregnForskuddstrekk);
+        }
+        [Test]
         public void ShouldGenerateCorrectTaxForAllLines2019()
         {
-            TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2019.txt", Skattetabell2019.beregnForskuddstrekk);
+	        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2019.txt", Skattetabell2019.beregnForskuddstrekk);
         }
 
-        [Test]
+		[Test]
         public void ShouldGenerateCorrectTaxForAllLines2018()
         {
             TestAllTables2017_2018("HL.Payroll.Tests.Skattetabell.trekk2018.txt",
