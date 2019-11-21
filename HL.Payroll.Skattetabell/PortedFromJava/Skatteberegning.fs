@@ -1,6 +1,5 @@
 ﻿module internal Skatteberegning
 
-open System
 open Utils
 open Konstanter
 open Tabellnummer
@@ -25,8 +24,8 @@ let beregnTrinnskatt konstanter tabellnummer personInntektAar =
 
     let prosentTrinn3 =
         match tabellnummer.tabelltype with
-        | Tabelltype.FINNMARK -> konstanter.TRINNSKATT_PROSENT3_FINNMARK
-        | _ -> konstanter.TRINNSKATT_PROSENT3
+        | Tabelltype.FINNMARK -> konstanter.PROSENT_TRINN3_FINNMARK
+        | _ -> konstanter.PROSENT_TRINN3
 
     let TRINNSKATT1 = 
         match personInntektAar with

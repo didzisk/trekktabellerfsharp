@@ -86,8 +86,18 @@ namespace HL.Payroll.Tests.UnitTests
             var trekk = Skattetabell2018.beregnForskuddstrekk(grl, tabNr, pensj == 1, periodLength);
             Assert.AreEqual(expected, trekk);
         }
-
         [Test]
+        [TestCase(68700, 7101, 0, 1, 24863)]
+        [TestCase(41667, 7100, 0, 1, 12653)]
+		[TestCase(26300, 7117, 0, 1, 3016)]
+        public void ShouldCalculateCorrectTaxForCherryPickedValues2020(int grl, int tabNr, int pensj, int periodLength,
+	        int expected)
+        {
+	        var trekk = Skattetabell2020.beregnForskuddstrekk(grl, tabNr, pensj == 1, periodLength);
+	        Assert.AreEqual(expected, trekk);
+        }
+
+		[Test]
         public void ShouldGenerateCorrectTaxForAllLines2020()
         {
 	        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2020.txt", Skattetabell2020.beregnForskuddstrekk);
@@ -106,7 +116,7 @@ namespace HL.Payroll.Tests.UnitTests
         }
 
         [Test]
-        [Ignore("2017 gir 1 krone mer i trekk i gnaske mange tilfeller. Vi antar det er avrundingsfeil i filen.")]
+        [Ignore("2017 gir 1 krone mer i trekk i ganske mange tilfeller. Vi antar det er avrundingsfeil i filen.")]
         public void ShouldGenerateCorrectTaxForAllLines2017()
         {
             TestAllTables2017_2018("HL.Payroll.Tests.Skattetabell.trekk2017.txt",
