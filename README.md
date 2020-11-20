@@ -3,4 +3,8 @@ This is an F# port of https://github.com/Skatteetaten/trekktabell, written in Ja
 Usually we in Visma/Huldt-Lillevik receive the changes before everybody else, so this might come up earlier then the original repo is updated.
 
 I'm adding some Java files here for reference. Those are aligned and often modifed to my needs (I'm not a Java programmer and I often struggle to simply get the Java project to run),
-don't expect them to be identical to the original.
+don't expect them to be identical to the original. 
+
+And by the way, the only reason I add them is to see the diff in git. If the guys from Skatteetaten would push their work along the way, I wouldn't need to do this, because there would be a commit with last years code, which is then transformed with this year's modifications.
+
+Here is the site, which helped me to set up Java environment in VSCode: https://vaadin.com/learn/tutorials/vs-code-for-java-and-maven-projects
