@@ -15,3 +15,4 @@ wiki/*
 .classpath
 .project
 .settings
+target/
