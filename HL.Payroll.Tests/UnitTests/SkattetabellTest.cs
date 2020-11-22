@@ -97,11 +97,18 @@ namespace HL.Payroll.Tests.UnitTests
 	        Assert.AreEqual(expected, trekk);
         }
 
-		[Test]
+        [Test]
+        public void ShouldGenerateCorrectTaxForAllLines2021()
+        {
+	        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2021.txt", Skattetabell2021.beregnForskuddstrekk);
+        }
+
+        [Test]
         public void ShouldGenerateCorrectTaxForAllLines2020()
         {
 	        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2020.txt", Skattetabell2020.beregnForskuddstrekk);
         }
+
         [Test]
         public void ShouldGenerateCorrectTaxForAllLines2019()
         {

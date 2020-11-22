@@ -71,8 +71,10 @@
     <Compile Include="PortedFromJavaYearly\Konstanter2018.fs" />
     <Compile Include="PortedFromJavaYearly\Konstanter2019.fs" />
     <Compile Include="PortedFromJavaYearly\Konstanter2020.fs" />
+    <Compile Include="PortedFromJavaYearly\Konstanter2021.fs" />
     <Compile Include="PortedFromJavaYearly\Tabellnummer2019.fs" />
     <Compile Include="PortedFromJavaYearly\Tabellnummer2020.fs" />
+    <Compile Include="PortedFromJavaYearly\Tabellnummer2021.fs" />
     <Compile Include="Skattetabell2014.fs" />
     <Compile Include="Skattetabell2015.fs" />
     <Compile Include="Skattetabell2016.fs" />
@@ -81,6 +83,7 @@
     <Compile Include="Skattetabell2019.fs" />
     <Compile Include="Skattetabell2020.fs" />
     <Content Include="packages.config" />
+    <Compile Include="Skattetabell2021.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
