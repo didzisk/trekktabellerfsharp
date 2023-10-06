@@ -52,7 +52,7 @@ let beregnTrinnskatt konstanter tabellnummer personInntektAar =
         | LT konstanter.TRINN5 x -> 0.0
         | _ -> double (personInntektAar - konstanter.TRINN5) * konstanter.PROSENT_TRINN5 / 100.0
 
-    TRINNSKATT1 + TRINNSKATT2 + TRINNSKATT3 + TRINNSKATT4
+    TRINNSKATT1 + TRINNSKATT2 + TRINNSKATT3 + TRINNSKATT4 + TRINNSKATT5
     |> RoundAwayFromZero |> int
 
 let private beregnTrygdeavgiftLavSats konstanter personInntektAar =

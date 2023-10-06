@@ -1,4 +1,4 @@
-﻿module internal Tabellnummer2023
+﻿module internal Tabellnummer2022
 
 let InitializeTabellnummerData nr pensj konstanter = 
     Tabellnummer2020.InitializeTabellnummerData nr pensj konstanter 
