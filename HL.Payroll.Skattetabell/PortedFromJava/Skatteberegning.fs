@@ -45,7 +45,12 @@ let beregnTrinnskatt konstanter tabellnummer personInntektAar =
     let TRINNSKATT4 = 
         match personInntektAar with
         | LT konstanter.TRINN4 x -> 0.0
-        | _ -> double (personInntektAar - konstanter.TRINN4) * konstanter.PROSENT_TRINN4 / 100.0
+        | LT konstanter.TRINN5 x -> double (x - konstanter.TRINN4 ) * konstanter.PROSENT_TRINN4 / 100.0
+        | _ -> double (konstanter.TRINN5 - konstanter.TRINN4) * konstanter.PROSENT_TRINN4 / 100.0
+    let TRINNSKATT5 = 
+        match personInntektAar with
+        | LT konstanter.TRINN5 x -> 0.0
+        | _ -> double (personInntektAar - konstanter.TRINN5) * konstanter.PROSENT_TRINN5 / 100.0
 
     TRINNSKATT1 + TRINNSKATT2 + TRINNSKATT3 + TRINNSKATT4
     |> RoundAwayFromZero |> int
