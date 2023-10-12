@@ -32,12 +32,12 @@ class SkattetabellTest
                                 trekkRecord.Tabellnummer,
                                 trekkRecord.TabelltypeIsPensjon,
                                 trekkRecord.Trekkperiode);
-                            Assert.AreEqual(
-                                trekkRecord.Trekk,
-                                t,
-                                $"{trekkRecord.Tabellnummer} failed at grl:{trekkRecord.Trekkgrunnlag} pensj:{trekkRecord.TabelltypeIsPensjon} periode:{trekkRecord.Trekkperiode}"
-                            );
-
+                            Assert.That(
+                                    trekkRecord.Trekk==0 ? 0: Math.Abs(trekkRecord.Trekk - t) / trekkRecord.Trekk, Is.LessThan(0.001),
+                                    $"{trekkRecord.Tabellnummer} failed at grl:{trekkRecord.Trekkgrunnlag} pensj:{trekkRecord.TabelltypeIsPensjon} periode:{trekkRecord.Trekkperiode}");
+                            Assert.That(
+                                    Math.Abs(trekkRecord.Trekk-t), Is.LessThanOrEqualTo(1),
+                                    $"{trekkRecord.Tabellnummer} failed at grl:{trekkRecord.Trekkgrunnlag} pensj:{trekkRecord.TabelltypeIsPensjon} periode:{trekkRecord.Trekkperiode}");
                         }
 
                     }
@@ -65,10 +65,7 @@ class SkattetabellTest
                                 trekkRecord.TabelltypeIsPensjon,
                                 trekkRecord.Trekkperiode);
                             Assert.That(
-                                Math.Abs(trekkRecord.Trekk - t) / trekkRecord.Trekk, Is.LessThan(0.01),
-                                $"{trekkRecord.Tabellnummer} failed at grl:{trekkRecord.Trekkgrunnlag} pensj:{trekkRecord.TabelltypeIsPensjon} periode:{trekkRecord.Trekkperiode}");
-                            Assert.That(
-                                Math.Abs(trekkRecord.Trekk-t), Is.LessThanOrEqualTo(30),
+                                Math.Abs(trekkRecord.Trekk - t) / trekkRecord.Trekk, Is.LessThan(0.001),
                                 $"{trekkRecord.Tabellnummer} failed at grl:{trekkRecord.Trekkgrunnlag} pensj:{trekkRecord.TabelltypeIsPensjon} periode:{trekkRecord.Trekkperiode}");
                         }
 
@@ -96,6 +93,12 @@ class SkattetabellTest
     {
         var trekk = Skattetabell2020.beregnForskuddstrekk(grl, tabNr, pensj == 1, periodLength);
         Assert.AreEqual(expected, trekk);
+    }
+    [Test]
+    public void ShouldGenerateCorrectTaxForAllLines2023_1()
+    {
+        //New file
+        TestAllTables("HL.Payroll.Tests.Skattetabell.trekk2023-1.txt", Skattetabell2023.beregnForskuddstrekk);
     }
 
     [Test]

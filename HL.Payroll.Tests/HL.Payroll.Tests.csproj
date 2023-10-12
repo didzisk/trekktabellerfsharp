@@ -16,6 +16,8 @@
     <EmbeddedResource Include="Skattetabell\trekk2022.txt" />
     <None Remove="Skattetabell\trekk2023.txt" />
     <EmbeddedResource Include="Skattetabell\trekk2023.txt" />
+    <None Remove="Skattetabell\trekk2023-1.txt" />
+    <EmbeddedResource Include="Skattetabell\trekk2023-1.txt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FileHelpers" Version="3.5.2" />
